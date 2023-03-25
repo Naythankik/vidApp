@@ -35,8 +35,34 @@ const getACustomer = async (req, res) => {
   }
 };
 
+const updateACustomer = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { value } = validateCustomer(req.body);
+
+    const findCustomer = await Customer.findByIdAndUpdate(id, { $set: value });
+    res.send("Customer has been updated successfully!");
+  } catch (error) {
+    throw new Error(error);
+  }
+  return;
+};
+
+const deleteACustomer = async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Customer.findByIdAndDelete(id);
+    res.send("Customer has been deleted succesfully");
+  } catch (error) {
+    throw new Error(error);
+  }
+  return;
+};
+
 module.exports = {
   createCustomer,
   getCustomers,
   getACustomer,
+  updateACustomer,
+  deleteACustomer,
 };
