@@ -6,7 +6,10 @@ const Customer = new mongoose.Schema({
     unique: true,
   },
 
-  isGold: Boolean,
+  isGold: {
+    type: Boolean,
+    default: false,
+  },
 
   phone: {
     type: String,

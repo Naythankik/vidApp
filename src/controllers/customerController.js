@@ -1,3 +1,4 @@
+const { CustomerError } = require("../errors");
 const validateCustomer = require("../middlewares/customerMiddleware");
 const Customer = require("../models/customerModel");
 
