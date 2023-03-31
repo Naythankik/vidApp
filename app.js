@@ -19,14 +19,15 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //The routes list
-app.use("/api/customer", customerRoutes);
-app.use("/api/genre", genreRoutes);
-app.use("/api/movies", movieRoutes);
-app.use("/api/rentals", rentalRouter);
+
+app.use("/api/vidapp/customer", customerRoutes);
+app.use("/api/vidapp/genre", genreRoutes);
+app.use("/api/vidapp/movies", movieRoutes);
+app.use("/api/vidapp/rentals", rentalRouter);
 
 // index endpoint
-app.get(["/"], (req, res) => {
+app.get(["/vidapp"], (req, res) => {
   res.send("Welcome to VidApp");
 });
 
-app.listen(PORT, () => console.log(`PORT is running on ${PORT}`));
+app.listen(PORT);
