@@ -26,7 +26,7 @@ app.use("/api/vidapp/movies", movieRoutes);
 app.use("/api/vidapp/rentals", rentalRouter);
 
 // index endpoint
-app.get(["/vidapp"], (req, res) => {
+app.get(["/", "/vidapp", "/api/vidapp"], (req, res) => {
   res.send("Welcome to VidApp");
 });
 
