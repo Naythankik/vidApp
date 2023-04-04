@@ -44,7 +44,7 @@ const createRental = async (req, res) => {
   return;
 };
 
-const getRental = async (req, res) => {
+const getRentals = async (req, res) => {
   try {
     const rent = await Rental.find()
       .populate("customer")
@@ -58,8 +58,26 @@ const getRental = async (req, res) => {
     throw new Error(error);
   }
 };
+const getARental = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const rental = await Rental.findById(id).populate(["customer", "movie"]);
+
+    if (!rental) {
+      res.status(400).send("No rent found");
+      return;
+    }
+
+    res.status(200).send(rental);
+  } catch (error) {
+    throw new Error(error);
+  }
+  return;
+};
 
 module.exports = {
-  getRental,
+  getRentals,
   createRental,
+  getARental,
 };

@@ -25,7 +25,8 @@ An imaginary video app that allows renting and uploading of movies.
 ### Rental(s) Routes : /api/vidapp/rentals
 
 - Rent a Movie : POST - /api/vidapp/rentals/:customer-id/:movie-id
-- get a rent details : GET - /api/vidapp/rentals/
+- get all rent : GET - /api/vidapp/rentals/
+- get a rent details : GET - /api/vidapp/rentals/:rental-id
 
 ### Genre(s) Routes : /api/vidapp/genre
 
