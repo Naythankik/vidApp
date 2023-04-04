@@ -6,7 +6,7 @@ const {
 
 const Router = express.Router();
 
-Router.post("/:customer/:movie", createRental);
 Router.get("/", getRental);
+Router.post("/:customer/:movie", createRental);
 
 module.exports = Router;

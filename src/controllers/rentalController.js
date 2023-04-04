@@ -7,7 +7,10 @@ const createRental = async (req, res) => {
   const { customer, movie } = req.params;
   const { error, value } = rentalValidate(req.body);
 
-  if (error) throw new Error(error.details[0].message);
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
 
   try {
     const findCustomer = await customerModel.findById(customer);
@@ -21,8 +24,10 @@ const createRental = async (req, res) => {
     const rental = await Rental.findOne({ customer, movie });
 
     // if the rental exist, return an error
-    if (rental) throw new Error("Movie has been rented before");
-
+    if (rental) {
+      res.status(400).send("Movie has been rented before");
+      return;
+    }
     const newRent = await Rental.create(value);
 
     if (newRent) {

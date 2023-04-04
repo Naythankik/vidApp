@@ -19,11 +19,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //The routes list
-
-app.use("/api/vidapp/customer", customerRoutes);
-app.use("/api/vidapp/genre", genreRoutes);
-app.use("/api/vidapp/movies", movieRoutes);
 app.use("/api/vidapp/rentals", rentalRouter);
+app.use("/api/vidapp/customers", customerRoutes);
+app.use("/api/vidapp/genres", genreRoutes);
+app.use("/api/vidapp/movies", movieRoutes);
 
 // index endpoint
 app.get(["/", "/vidapp", "/api/vidapp"], (req, res) => {

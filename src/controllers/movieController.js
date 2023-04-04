@@ -15,8 +15,10 @@ const getMovies = async (req, res) => {
 const createMovie = async (req, res) => {
   const { error, value } = validateMovie(req.body);
 
-  if (error) throw new Error(error.details[0].message);
-
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
   try {
     const genre = await Genre.findOne({ name: value.genre });
 
@@ -28,8 +30,8 @@ const createMovie = async (req, res) => {
     }
 
     const movie = await Movie.create(value);
-
-    res.send({ message: movie });
+    res.send({ message: "Movie has been created" });
+    return;
   } catch (error) {
     throw new Error(error);
   }
