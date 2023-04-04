@@ -35,4 +35,4 @@ An imaginary video app that allows renting and uploading of movies.
 
 
 
-[Visit Vid App](vidapp.up.railway.app) 
+[Visit Vid App](https://vidapp.up.railway.app/) 
