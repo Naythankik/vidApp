@@ -25,7 +25,7 @@ An imaginary video app that allows renting and uploading of movies.
 
 
 
-### Gnere(s) Routes : /api/vidapp/genre
+### Genre(s) Routes : /api/vidapp/genre
 - create a genre : POST - /api/vidapp/genre/
 - get all genre : GET - /api/vidapp/genre/
 - get a genre : GET - /api/vidapp/genre/:genre-id
