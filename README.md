@@ -17,3 +17,17 @@ An imaginary video app that allows renting and uploading of movies.
 - get a movie : GET - /api/vidapp/movies/:id
 - update a movie : PUT - /api/vidapp/movies/:id
 - delete a movie : DELETE - /api/vidapp/movies/:id
+
+
+### Rental(s) Routes : /api/vidapp/rentals
+- Rent a Movie : POST - /api/vidapp/rentals/:customer-id/:movie-id
+- get a rent details : GET - /api/vidapp/rentals/
+
+
+
+### Rental(s) Routes : /api/vidapp/genre
+- create a genre : POST - /api/vidapp/genre/
+- get all genre : GET - /api/vidapp/genre/
+- get a genre : GET - /api/vidapp/genre/:genre-id
+- update a genre : PUT - /api/vidapp/genre/:genre-id
+- delete a genre : DELETE - /api/vidapp/genre/genre-:id
