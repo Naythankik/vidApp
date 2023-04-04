@@ -31,3 +31,8 @@ An imaginary video app that allows renting and uploading of movies.
 - get a genre : GET - /api/vidapp/genre/:genre-id
 - update a genre : PUT - /api/vidapp/genre/:genre-id
 - delete a genre : DELETE - /api/vidapp/genre/:genre-id
+
+
+
+
+[Visit Vid App](vidapp.up.railway.app) 
